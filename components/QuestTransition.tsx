@@ -32,32 +32,32 @@ const TECH_ADOPTION = [
 const TransitionGraph: React.FC<{ id: number }> = ({ id }) => {
   if (id === 1) {
     return (
-      <div className="w-full h-56 mt-4 bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
-        <div className="flex items-center justify-between mb-2">
-          <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Industry Scale Benchmarks</p>
-          <div className="flex items-center space-x-2">
-            <span className="w-2 h-2 bg-teal-600 rounded-full"></span>
-            <span className="text-[9px] font-bold text-gray-400">Headcount</span>
+      <div className="w-full h-48 mt-2 bg-white rounded-2xl p-3 shadow-sm border border-gray-100">
+        <div className="flex items-center justify-between mb-1">
+          <p className="text-[9px] font-bold text-gray-500 uppercase tracking-widest">Industry Scale</p>
+          <div className="flex items-center space-x-1">
+            <span className="w-1.5 h-1.5 bg-teal-600 rounded-full"></span>
+            <span className="text-[8px] font-bold text-gray-400">Headcount</span>
           </div>
         </div>
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={INDUSTRY_COMPARISON} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
-            <XAxis dataKey="sector" tick={{ fontSize: 10, fontWeight: 700, fill: '#64748b' }} axisLine={false} tickLine={false} />
+        <ResponsiveContainer width="100%" height="90%">
+          <BarChart data={INDUSTRY_COMPARISON} margin={{ top: 5, right: 5, left: -20, bottom: 0 }}>
+            <XAxis dataKey="sector" tick={{ fontSize: 9, fontWeight: 700, fill: '#64748b' }} axisLine={false} tickLine={false} />
             <Tooltip
               cursor={{ fill: '#f0fdfa' }}
               content={({ active, payload }) => {
                 if (active && payload && payload.length) {
                   return (
-                    <div className="bg-white p-2 border border-gray-100 shadow-xl rounded-lg">
-                      <p className="text-[10px] font-bold text-gray-500">{payload[0].payload.leader}</p>
-                      <p className="text-sm font-black text-teal-600">{payload[0].value?.toLocaleString()}+</p>
+                    <div className="bg-white p-1.5 border border-gray-100 shadow-xl rounded-lg">
+                      <p className="text-[9px] font-bold text-gray-500">{payload[0].payload.leader}</p>
+                      <p className="text-xs font-black text-teal-600">{payload[0].value?.toLocaleString()}+</p>
                     </div>
                   );
                 }
                 return null;
               }}
             />
-            <Bar dataKey="headcount" radius={[4, 4, 0, 0]} animationDuration={1500}>
+            <Bar dataKey="headcount" radius={[3, 3, 0, 0]} animationDuration={1000}>
               {INDUSTRY_COMPARISON.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={entry.color} />
               ))}
@@ -70,11 +70,11 @@ const TransitionGraph: React.FC<{ id: number }> = ({ id }) => {
 
   if (id === 2) {
     return (
-      <div className="w-full h-56 mt-4 bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
-        <div className="flex items-center justify-between mb-2">
-          <div className="w-full mt-6 space-y-3">
-            <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest text-center">GCC Evolution Framework</p>
-            <div className="flex justify-between items-center px-2">
+      <div className="w-full h-48 mt-2 bg-white rounded-2xl p-3 shadow-sm border border-gray-100">
+        <div className="flex items-center justify-between mb-1">
+          <div className="w-full mt-2 space-y-2">
+            <p className="text-[9px] font-bold text-gray-500 uppercase tracking-widest text-center">GCC Evolution</p>
+            <div className="flex justify-between items-center px-1">
               {EVOLUTION_DATA.map((item, idx) => (
                 <div key={item.stage} className="flex flex-col items-center">
                   <motion.div
@@ -82,16 +82,15 @@ const TransitionGraph: React.FC<{ id: number }> = ({ id }) => {
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.5 + (idx * 0.2) }}
                     style={{ backgroundColor: item.color }}
-                    className="w-8 h-8 rounded-full flex items-center justify-center text-white shadow-lg mb-2"
+                    className="w-7 h-7 rounded-full flex items-center justify-center text-white shadow-lg mb-1"
                   >
                     {idx + 1}
                   </motion.div>
-                  <span className="text-[9px] font-bold text-gray-600">{item.stage}</span>
-                  <span className="text-[8px] text-gray-400">{item.focus}</span>
+                  <span className="text-[8px] font-bold text-gray-600">{item.stage}</span>
                 </div>
               ))}
             </div>
-            <div className="h-1 bg-gray-100 rounded-full mx-4 mt-2 relative overflow-hidden">
+            <div className="h-1 bg-gray-100 rounded-full mx-3 mt-1 relative overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
@@ -107,20 +106,20 @@ const TransitionGraph: React.FC<{ id: number }> = ({ id }) => {
 
   if (id === 3) {
     return (
-      <div className="w-full h-56 mt-4 bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex flex-col">
-        <div className="flex items-center justify-between mb-4">
-          <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Tech Investment Priorities</p>
-          <div className="flex items-center space-x-2">
-            <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
-            <span className="text-[9px] font-bold text-gray-400">Adoption %</span>
+      <div className="w-full h-48 mt-2 bg-white rounded-2xl p-3 shadow-sm border border-gray-100 flex flex-col">
+        <div className="flex items-center justify-between mb-2">
+          <p className="text-[9px] font-bold text-gray-500 uppercase tracking-widest">Tech Priorities</p>
+          <div className="flex items-center space-x-1">
+            <span className="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+            <span className="text-[8px] font-bold text-gray-400">% Adopt</span>
           </div>
         </div>
 
-        <div className="space-y-4 px-1 flex-1 flex flex-col justify-center">
+        <div className="space-y-3 px-1 flex-1 flex flex-col justify-center">
           {TECH_ADOPTION.map((t, i) => (
-            <div key={t.tech} className="space-y-1.5">
-              <div className="flex justify-between text-[10px] font-bold text-gray-600">
-                <span className="flex items-center gap-2">
+            <div key={t.tech} className="space-y-1">
+              <div className="flex justify-between text-[9px] font-bold text-gray-600">
+                <span className="flex items-center gap-1.5">
                   {i === 0 && <Rocket className="w-3 h-3 text-teal-500" />}
                   {i === 1 && <Sparkles className="w-3 h-3 text-purple-500" />}
                   {i === 2 && <Zap className="w-3 h-3 text-blue-500" />}
@@ -128,7 +127,7 @@ const TransitionGraph: React.FC<{ id: number }> = ({ id }) => {
                 </span>
                 <span>{t.value}%</span>
               </div>
-              <div className="h-2 bg-gray-50 rounded-full overflow-hidden border border-gray-100">
+              <div className="h-1.5 bg-gray-50 rounded-full overflow-hidden border border-gray-100">
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${t.value}%` }}
@@ -221,7 +220,7 @@ export const QuestTransition: React.FC<QuestTransitionProps> = ({ questId, onCom
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-white p-6 overflow-hidden"
+      className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-white p-2 overflow-hidden"
     >
       {/* Background Pulses */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
@@ -232,12 +231,12 @@ export const QuestTransition: React.FC<QuestTransitionProps> = ({ questId, onCom
         />
       </div>
 
-      <div className="relative z-10 text-center max-w-lg w-full space-y-6">
-        <div className="flex justify-center mb-6">
+      <div className="relative z-10 text-center max-w-lg w-full space-y-4">
+        <div className="flex justify-center mb-4">
           <TransitionHero questId={questId} />
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-2">
           <motion.p
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -250,7 +249,7 @@ export const QuestTransition: React.FC<QuestTransitionProps> = ({ questId, onCom
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-3xl font-black text-gray-900 tracking-tight"
+            className="text-2xl font-black text-gray-900 tracking-tight"
           >
             {content.title}
           </motion.h2>
@@ -258,7 +257,7 @@ export const QuestTransition: React.FC<QuestTransitionProps> = ({ questId, onCom
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-sm font-medium text-gray-500"
+            className="text-xs font-medium text-gray-500"
           >
             {content.insight}
           </motion.p>
@@ -278,7 +277,7 @@ export const QuestTransition: React.FC<QuestTransitionProps> = ({ questId, onCom
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ delay: 0.2, duration: 4 }}
-          className="h-1 bg-gray-100 rounded-full overflow-hidden mt-8 mx-auto w-1/2"
+          className="h-1 bg-gray-100 rounded-full overflow-hidden mt-6 mx-auto w-1/2"
         >
           <motion.div
             layoutId="transition-bar"

@@ -56,7 +56,7 @@ export const QuestTech: React.FC<QuestTechProps> = ({
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col h-full w-full overflow-hidden"
         >
-            <div className="flex-1 p-2 overflow-hidden flex flex-col relative">
+            <div className="flex-1 p-1 overflow-hidden flex flex-col relative justify-center">
                 <AnimatePresence mode="wait">
                     {/* Page 1: Core Platforms */}
                     {step === 0 && (
@@ -65,27 +65,27 @@ export const QuestTech: React.FC<QuestTechProps> = ({
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -20 }}
-                            className="space-y-4 h-full flex flex-col justify-center max-w-lg mx-auto w-full"
+                            className="space-y-3 h-full flex flex-col justify-center max-w-lg mx-auto w-full"
                         >
                             <motion.div
                                 initial={{ x: -20, opacity: 0 }}
                                 animate={{ x: 0, opacity: 1 }}
                                 transition={{ delay: 0.1 }}
-                                className="bg-gradient-to-br from-teal-50 to-white border border-teal-100 rounded-2xl p-4 flex items-start gap-4 shrink-0 shadow-[4px_4px_10px_rgba(13,148,136,0.05)] mb-6"
+                                className="bg-gradient-to-br from-teal-50 to-white border border-teal-100 rounded-2xl p-3 flex items-center gap-4 shrink-0 shadow-[4px_4px_10px_rgba(13,148,136,0.05)] mb-4"
                             >
-                                <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-700 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-[4px_4px_8px_rgba(13,148,136,0.3),-2px_-2px_4px_rgba(255,255,255,0.5)_inset]">
-                                    <Server className="w-6 h-6" />
+                                <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-teal-700 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-[4px_4px_8px_rgba(13,148,136,0.3),-2px_-2px_4px_rgba(255,255,255,0.5)_inset]">
+                                    <Server className="w-5 h-5" />
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-bold text-teal-900">Core Platforms</h3>
-                                    <p className="text-teal-700 text-sm mt-1 leading-relaxed">What are the foundational systems for your center?</p>
+                                    <h3 className="text-base font-bold text-teal-900">Core Platforms</h3>
+                                    <p className="text-teal-700 text-xs mt-0.5 leading-relaxed">What are the foundational systems for your center?</p>
                                 </div>
-                                <div className="ml-auto w-24 h-24 hidden md:block">
+                                <div className="ml-auto w-16 h-16 hidden md:block">
                                     <InteractiveFloat src="../src/assets/pages/solutions/ai-solutions/Hero Section/float3.png" alt="Tech Float" />
                                 </div>
                             </motion.div>
 
-                            <div className="grid grid-cols-2 gap-3">
+                            <div className="grid grid-cols-2 gap-2">
                                 {['SAP', 'Oracle', 'Salesforce', 'ServiceNow', 'Workday'].map(p => (
                                     <button
                                         key={p}
@@ -93,7 +93,7 @@ export const QuestTech: React.FC<QuestTechProps> = ({
                                             const ps = platforms.includes(p) ? platforms.filter(x => x !== p) : [...platforms, p];
                                             onUpdate({ platforms: ps });
                                         }}
-                                        className={`p-4 rounded-xl text-sm font-bold transition-all border text-center ${platforms.includes(p) ? 'bg-teal-600 border-teal-600 text-white shadow-md' : 'bg-white border-gray-100 text-gray-500 hover:border-teal-200'}`}
+                                        className={`p-3 rounded-xl text-xs font-bold transition-all border text-center ${platforms.includes(p) ? 'bg-teal-600 border-teal-600 text-white shadow-md' : 'bg-white border-gray-100 text-gray-500 hover:border-teal-200'}`}
                                     >
                                         {p}
                                     </button>
@@ -101,7 +101,7 @@ export const QuestTech: React.FC<QuestTechProps> = ({
                             </div>
 
                             <input
-                                className="w-full p-4 text-sm bg-gray-50 border border-gray-100 rounded-xl outline-none focus:bg-white focus:border-teal-500 transition-all text-center"
+                                className="w-full p-3 text-xs bg-gray-50 border border-gray-100 rounded-xl outline-none focus:bg-white focus:border-teal-500 transition-all text-center"
                                 placeholder="Other platform..."
                                 value={customPlatform || ''}
                                 onChange={e => onUpdate({ customPlatform: e.target.value })}
@@ -116,14 +116,14 @@ export const QuestTech: React.FC<QuestTechProps> = ({
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -20 }}
-                            className="space-y-4 h-full flex flex-col justify-center"
+                            className="space-y-3 h-full flex flex-col justify-center"
                         >
-                            <div className="text-center mb-4">
-                                <h3 className="text-lg font-bold text-gray-900">Technology Stack</h3>
-                                <p className="text-sm text-gray-500">Select preferred languages and frameworks</p>
+                            <div className="text-center mb-3">
+                                <h3 className="text-base font-bold text-gray-900">Technology Stack</h3>
+                                <p className="text-xs text-gray-500">Select preferred languages and frameworks</p>
                             </div>
 
-                            <div className="flex flex-wrap gap-2 justify-center mb-4">
+                            <div className="flex flex-wrap gap-2 justify-center mb-3">
                                 {['.NET', 'React', 'Python', 'Go', 'Node.js', 'Kotlin'].map(p => {
                                     const isSelected = stacks.includes(p);
                                     return (
@@ -133,7 +133,7 @@ export const QuestTech: React.FC<QuestTechProps> = ({
                                                 const ps = isSelected ? stacks.filter(x => x !== p) : [...stacks, p];
                                                 onUpdate({ stacks: ps });
                                             }}
-                                            className={`px-6 py-3 rounded-full text-sm font-bold border transition-all ${isSelected ? 'bg-teal-600 border-teal-600 text-white' : 'bg-white border-gray-100 text-gray-500 hover:border-gray-200'}`}
+                                            className={`px-5 py-2 rounded-full text-xs font-bold border transition-all ${isSelected ? 'bg-teal-600 border-teal-600 text-white' : 'bg-white border-gray-100 text-gray-500 hover:border-gray-200'}`}
                                         >
                                             {p}
                                         </button>
@@ -147,7 +147,7 @@ export const QuestTech: React.FC<QuestTechProps> = ({
                                     <button
                                         key={s}
                                         onClick={() => onUpdate({ stacks: stacks.filter(x => x !== s) })}
-                                        className="px-4 py-2 rounded-full text-xs font-bold bg-teal-50 border border-teal-200 text-teal-700 flex items-center space-x-1"
+                                        className="px-3 py-1.5 rounded-full text-[10px] font-bold bg-teal-50 border border-teal-200 text-teal-700 flex items-center space-x-1"
                                     >
                                         <span>{s}</span>
                                         <X className="w-3 h-3" />
@@ -155,9 +155,9 @@ export const QuestTech: React.FC<QuestTechProps> = ({
                                 ))}
                             </div>
 
-                            <div className="flex gap-2 max-w-sm mx-auto w-full mt-4">
+                            <div className="flex gap-2 max-w-sm mx-auto w-full mt-3">
                                 <input
-                                    className="flex-grow p-3 text-sm border border-gray-100 rounded-xl outline-none focus:border-teal-500"
+                                    className="flex-grow p-2.5 text-xs border border-gray-100 rounded-xl outline-none focus:border-teal-500"
                                     placeholder="Add unique technology..."
                                     value={newStackInput}
                                     onChange={e => setNewStackInput(e.target.value)}
@@ -165,9 +165,9 @@ export const QuestTech: React.FC<QuestTechProps> = ({
                                 />
                                 <button
                                     onClick={handleAddStack}
-                                    className="bg-teal-50 text-teal-600 p-3 rounded-xl hover:bg-teal-100 transition-colors"
+                                    className="bg-teal-50 text-teal-600 p-2.5 rounded-xl hover:bg-teal-100 transition-colors"
                                 >
-                                    <Plus className="w-5 h-5" />
+                                    <Plus className="w-4 h-4" />
                                 </button>
                             </div>
                         </motion.div>
@@ -180,22 +180,22 @@ export const QuestTech: React.FC<QuestTechProps> = ({
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -20 }}
-                            className="space-y-4 h-full flex flex-col justify-center"
+                            className="space-y-3 h-full flex flex-col justify-center"
                         >
-                            <div className="text-center mb-6">
-                                <h3 className="text-lg font-bold text-gray-900">Cloud Strategy</h3>
-                                <p className="text-sm text-gray-500">How will you deploy your infrastructure?</p>
+                            <div className="text-center mb-4">
+                                <h3 className="text-base font-bold text-gray-900">Cloud Strategy</h3>
+                                <p className="text-xs text-gray-500">How will you deploy your infrastructure?</p>
                             </div>
 
-                            <div className="grid grid-cols-1 gap-3 max-w-md mx-auto w-full">
+                            <div className="grid grid-cols-1 gap-2 max-w-md mx-auto w-full">
                                 {['Public Cloud First', 'Hybrid Infrastructure', 'Multi-Cloud Native', 'On-Prem / Private Cloud'].map(strategy => (
                                     <button
                                         key={strategy}
                                         onClick={() => onUpdate({ cloudStrategy: strategy })}
-                                        className={`p-5 rounded-xl border text-left transition-all relative group ${cloudStrategy === strategy ? 'border-teal-500 bg-teal-50 text-teal-900 shadow-md' : 'border-gray-100 bg-white text-gray-500 hover:border-teal-100'}`}
+                                        className={`p-4 rounded-xl border text-left transition-all relative group ${cloudStrategy === strategy ? 'border-teal-500 bg-teal-50 text-teal-900 shadow-md' : 'border-gray-100 bg-white text-gray-500 hover:border-teal-100'}`}
                                     >
-                                        <span className="font-bold block text-sm">{strategy}</span>
-                                        {cloudStrategy === strategy && <div className="absolute right-4 top-1/2 -translate-y-1/2 w-3 h-3 bg-teal-500 rounded-full" />}
+                                        <span className="font-bold block text-xs">{strategy}</span>
+                                        {cloudStrategy === strategy && <div className="absolute right-4 top-1/2 -translate-y-1/2 w-2 h-2 bg-teal-500 rounded-full" />}
                                     </button>
                                 ))}
                             </div>
@@ -209,14 +209,14 @@ export const QuestTech: React.FC<QuestTechProps> = ({
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -20 }}
-                            className="space-y-4 h-full flex flex-col justify-center max-w-lg mx-auto w-full"
+                            className="space-y-3 h-full flex flex-col justify-center max-w-lg mx-auto w-full"
                         >
-                            <div className="text-center mb-6">
-                                <h3 className="text-lg font-bold text-gray-900">AI & ML Capabilities</h3>
-                                <p className="text-sm text-gray-500">Select target use cases for the center</p>
+                            <div className="text-center mb-4">
+                                <h3 className="text-base font-bold text-gray-900">AI & ML Capabilities</h3>
+                                <p className="text-xs text-gray-500">Select target use cases for the center</p>
                             </div>
 
-                            <div className="grid grid-cols-2 gap-3">
+                            <div className="grid grid-cols-2 gap-2">
                                 {['Fraud Detection', 'Supply Chain Opt', 'Predictive Analytics', 'GenAI Support', 'Vision Intelligence'].map(u => (
                                     <button
                                         key={u}
@@ -224,16 +224,16 @@ export const QuestTech: React.FC<QuestTechProps> = ({
                                             const us = aiUseCases.includes(u) ? aiUseCases.filter(x => x !== u) : [...aiUseCases, u];
                                             onUpdate({ aiUseCases: us });
                                         }}
-                                        className={`p-4 rounded-xl text-xs text-center border transition-all font-bold ${aiUseCases.includes(u) ? 'bg-teal-50 border-teal-500 text-teal-700 shadow-sm' : 'bg-white border-gray-100 text-gray-400 hover:border-gray-200'}`}
+                                        className={`p-3 rounded-xl text-[11px] text-center border transition-all font-bold ${aiUseCases.includes(u) ? 'bg-teal-50 border-teal-500 text-teal-700 shadow-sm' : 'bg-white border-gray-100 text-gray-400 hover:border-gray-200'}`}
                                     >
                                         {u}
                                     </button>
                                 ))}
                             </div>
 
-                            <div className="mt-4">
+                            <div className="mt-2">
                                 <textarea
-                                    className="w-full p-4 text-sm bg-white border border-teal-50 rounded-xl outline-none focus:border-teal-500 h-24 transition-all resize-none"
+                                    className="w-full p-3 text-xs bg-white border border-teal-50 rounded-xl outline-none focus:border-teal-500 h-20 transition-all resize-none"
                                     placeholder="Suggest Your Own Use Case..."
                                     value={customAiUseCase || ''}
                                     onChange={e => onUpdate({ customAiUseCase: e.target.value })}
@@ -245,7 +245,7 @@ export const QuestTech: React.FC<QuestTechProps> = ({
             </div>
 
             {/* Navigation Footer */}
-            <div className="p-2 border-t border-gray-50 flex items-center justify-between shrink-0">
+            <div className="p-2 border-t border-gray-50 flex items-center justify-between shrink-0 mt-auto">
                 <button
                     onClick={handlePrev}
                     className="flex items-center space-x-2 font-bold px-4 py-2 text-gray-400 hover:text-gray-600 transition-colors"

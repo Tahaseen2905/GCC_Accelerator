@@ -54,7 +54,7 @@ export const QuestGovernance: React.FC<QuestGovernanceProps> = ({
       animate={{ opacity: 1, y: 0 }}
       className="flex flex-col h-full w-full overflow-hidden"
     >
-      <div className="flex-1 p-2 overflow-hidden flex flex-col relative bg-white">
+      <div className="flex-1 p-1 overflow-hidden flex flex-col relative bg-white justify-center">
         <AnimatePresence mode="wait">
           {/* Step 0: Structure (Entity & IP) */}
           {step === 0 && (
@@ -63,37 +63,37 @@ export const QuestGovernance: React.FC<QuestGovernanceProps> = ({
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
-              className="space-y-6 h-full flex flex-col justify-center max-w-lg mx-auto w-full"
+              className="space-y-4 h-full flex flex-col justify-center max-w-lg mx-auto w-full"
             >
               <motion.div
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.1 }}
-                className="bg-gradient-to-br from-teal-50 to-white border border-teal-100 rounded-2xl p-4 flex items-start gap-4 shrink-0 shadow-[4px_4px_10px_rgba(13,148,136,0.05)] mb-6"
+                className="bg-gradient-to-br from-teal-50 to-white border border-teal-100 rounded-2xl p-3 flex items-center gap-4 shrink-0 shadow-[4px_4px_10px_rgba(13,148,136,0.05)] mb-4"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-700 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-[4px_4px_8px_rgba(13,148,136,0.3),-2px_-2px_4px_rgba(255,255,255,0.5)_inset]">
-                  <Scale className="w-6 h-6" />
+                <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-teal-700 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-[4px_4px_8px_rgba(13,148,136,0.3),-2px_-2px_4px_rgba(255,255,255,0.5)_inset]">
+                  <Scale className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-teal-900">Legal Structure</h3>
-                  <p className="text-teal-700 text-sm mt-1 leading-relaxed">Define entity type and IP ownership.</p>
+                  <h3 className="text-base font-bold text-teal-900">Legal Structure</h3>
+                  <p className="text-teal-700 text-xs mt-0.5 leading-relaxed">Define entity type and IP ownership.</p>
                 </div>
-                <div className="ml-auto w-24 h-24 hidden md:block">
+                <div className="ml-auto w-16 h-16 hidden md:block">
                   <InteractiveFloat src="../src/assets/pages/solutions/ai-solutions/Hero Section/Hero.png" alt="Governance Float" />
                 </div>
               </motion.div>
 
-              <div className="space-y-4">
-                <label className="flex items-center text-sm font-bold text-gray-700 uppercase tracking-widest">
+              <div className="space-y-3">
+                <label className="flex items-center text-xs font-bold text-gray-700 uppercase tracking-widest">
                   <Building2 className="w-4 h-4 mr-2 text-teal-600" />
                   Entity Type
                 </label>
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-3 gap-2">
                   {(['Pvt Ltd', 'LLP', 'Branch'] as EntityType[]).map(type => (
                     <button
                       key={type}
                       onClick={() => onUpdate({ entityType: type })}
-                      className={`py-4 rounded-xl border font-bold text-sm transition-all ${entityType === type ? 'bg-teal-600 border-teal-600 text-white shadow-md' : 'bg-white border-gray-100 text-gray-500 hover:border-teal-200'
+                      className={`py-3 rounded-xl border font-bold text-xs transition-all ${entityType === type ? 'bg-teal-600 border-teal-600 text-white shadow-md' : 'bg-white border-gray-100 text-gray-500 hover:border-teal-200'
                         }`}
                     >
                       {type}
@@ -102,17 +102,17 @@ export const QuestGovernance: React.FC<QuestGovernanceProps> = ({
                 </div>
               </div>
 
-              <div className="space-y-4">
-                <label className="flex items-center text-sm font-bold text-gray-700 uppercase tracking-widest">
+              <div className="space-y-3">
+                <label className="flex items-center text-xs font-bold text-gray-700 uppercase tracking-widest">
                   <Globe className="w-4 h-4 mr-2 text-teal-600" />
                   IP Ownership Model
                 </label>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2">
                   {['Global HQ Owned', 'Local Entity Owned', 'Hybrid Licensing', 'Cost+ Transfer'].map(ip => (
                     <button
                       key={ip}
                       onClick={() => onUpdate({ ipOwnership: ip })}
-                      className={`p-4 rounded-xl border text-left text-xs font-bold transition-all ${ipOwnership === ip ? 'bg-teal-50 border-teal-500 text-teal-900' : 'bg-white border-gray-100 text-gray-400 hover:border-gray-200'}`}
+                      className={`p-3 rounded-xl border text-left text-[11px] font-bold transition-all ${ipOwnership === ip ? 'bg-teal-50 border-teal-500 text-teal-900' : 'bg-white border-gray-100 text-gray-400 hover:border-gray-200'}`}
                     >
                       {ip}
                     </button>
@@ -129,15 +129,15 @@ export const QuestGovernance: React.FC<QuestGovernanceProps> = ({
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
-              className="space-y-6 h-full flex flex-col justify-center max-w-2xl mx-auto w-full"
+              className="space-y-4 h-full flex flex-col justify-center max-w-2xl mx-auto w-full"
             >
-              <div className="text-center mb-6">
-                <h3 className="text-lg font-bold text-gray-900">Compliance & Controls</h3>
-                <p className="text-sm text-gray-500">Regulatory standards and reporting</p>
+              <div className="text-center mb-4">
+                <h3 className="text-base font-bold text-gray-900">Compliance & Controls</h3>
+                <p className="text-xs text-gray-500">Regulatory standards and reporting</p>
               </div>
 
-              <div className="space-y-3">
-                <label className="flex items-center text-sm font-bold text-gray-700 uppercase tracking-widest">
+              <div className="space-y-2">
+                <label className="flex items-center text-xs font-bold text-gray-700 uppercase tracking-widest">
                   <Scale className="w-4 h-4 mr-2 text-teal-600" />
                   Key Compliance Standards
                 </label>
@@ -148,18 +148,18 @@ export const QuestGovernance: React.FC<QuestGovernanceProps> = ({
                       <button
                         key={std}
                         onClick={() => toggleArrayItem('complianceStandards', complianceStandards, std)}
-                        className={`flex items-center justify-between p-3 rounded-lg border transition-all ${active ? 'bg-green-50 border-green-200' : 'bg-white border-gray-100 hover:bg-gray-50'}`}
+                        className={`flex items-center justify-between p-2.5 rounded-lg border transition-all ${active ? 'bg-green-50 border-green-200' : 'bg-white border-gray-100 hover:bg-gray-50'}`}
                       >
-                        <span className={`text-xs font-bold ${active ? 'text-green-800' : 'text-gray-500'}`}>{std}</span>
-                        {active && <FileCheck className="w-4 h-4 text-green-600" />}
+                        <span className={`text-[11px] font-bold ${active ? 'text-green-800' : 'text-gray-500'}`}>{std}</span>
+                        {active && <FileCheck className="w-3.5 h-3.5 text-green-600" />}
                       </button>
                     );
                   })}
                 </div>
               </div>
 
-              <div className="space-y-3">
-                <label className="flex items-center text-sm font-bold text-gray-700 uppercase tracking-widest">
+              <div className="space-y-2">
+                <label className="flex items-center text-xs font-bold text-gray-700 uppercase tracking-widest">
                   HQ Reporting Cadence
                 </label>
                 <div className="flex bg-gray-100 p-1 rounded-lg">
@@ -167,7 +167,7 @@ export const QuestGovernance: React.FC<QuestGovernanceProps> = ({
                     <button
                       key={c}
                       onClick={() => onUpdate({ reportingCadence: c })}
-                      className={`flex-1 py-2 rounded-md text-xs font-bold transition-all ${reportingCadence === c ? 'bg-white text-teal-700 shadow-sm' : 'text-gray-400 hover:text-gray-600'}`}
+                      className={`flex-1 py-1.5 rounded-md text-xs font-bold transition-all ${reportingCadence === c ? 'bg-white text-teal-700 shadow-sm' : 'text-gray-400 hover:text-gray-600'}`}
                     >
                       {c}
                     </button>
@@ -184,20 +184,20 @@ export const QuestGovernance: React.FC<QuestGovernanceProps> = ({
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
-              className="space-y-6 h-full flex flex-col justify-center max-w-4xl mx-auto w-full"
+              className="space-y-4 h-full flex flex-col justify-center max-w-4xl mx-auto w-full"
             >
-              <div className="text-center mb-6">
-                <h3 className="text-lg font-bold text-gray-900">Risk & Ecosystem</h3>
-                <p className="text-sm text-gray-500">Mitigation strategies and external partners</p>
+              <div className="text-center mb-4">
+                <h3 className="text-base font-bold text-gray-900">Risk & Ecosystem</h3>
+                <p className="text-xs text-gray-500">Mitigation strategies and external partners</p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-red-50 p-4 rounded-xl border border-red-100 space-y-3">
-                  <label className="flex items-center text-sm font-bold text-red-900 uppercase tracking-widest">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-red-50 p-3 rounded-xl border border-red-100 space-y-2">
+                  <label className="flex items-center text-xs font-bold text-red-900 uppercase tracking-widest">
                     <Shield className="w-4 h-4 mr-2" />
                     Risk Mitigation
                   </label>
-                  <div className="space-y-2">
+                  <div className="space-y-1.5">
                     {['Cyber Insurance', 'BCP / DR Drill', 'Legal Counsel Retainer', 'Fx Hedging'].map(r => {
                       const active = riskMitigation.includes(r);
                       return (
@@ -206,18 +206,18 @@ export const QuestGovernance: React.FC<QuestGovernanceProps> = ({
                           onClick={() => toggleArrayItem('riskMitigation', riskMitigation, r)}
                           className={`w-full text-left flex items-center p-2 rounded-lg transition-all ${active ? 'bg-white shadow-sm text-red-800 font-bold' : 'text-red-400 hover:bg-red-100'}`}
                         >
-                          <div className={`w-4 h-4 rounded border mr-3 flex items-center justify-center ${active ? 'border-red-500 bg-red-500' : 'border-red-200'}`}>
-                            {active && <Check className="w-3 h-3 text-white" />}
+                          <div className={`w-3.5 h-3.5 rounded border mr-2 flex items-center justify-center ${active ? 'border-red-500 bg-red-500' : 'border-red-200'}`}>
+                            {active && <Check className="w-2.5 h-2.5 text-white" />}
                           </div>
-                          <span className="text-xs">{r}</span>
+                          <span className="text-[11px]">{r}</span>
                         </button>
                       );
                     })}
                   </div>
                 </div>
 
-                <div className="space-y-3 p-4 border border-gray-100 rounded-xl">
-                  <label className="flex items-center text-sm font-bold text-gray-700 uppercase tracking-widest">
+                <div className="space-y-2 p-3 border border-gray-100 rounded-xl">
+                  <label className="flex items-center text-xs font-bold text-gray-700 uppercase tracking-widest">
                     <Users className="w-4 h-4 mr-2 text-teal-600" />
                     Ecosystem Partners
                   </label>
@@ -228,7 +228,7 @@ export const QuestGovernance: React.FC<QuestGovernanceProps> = ({
                         <button
                           key={p}
                           onClick={() => toggleArrayItem('ecosystemPartners', ecosystemPartners, p)}
-                          className={`px-3 py-1.5 rounded-full border text-xs font-bold transition-all ${active ? 'bg-teal-600 border-teal-600 text-white' : 'bg-white border-gray-100 text-gray-500 hover:border-gray-300'}`}
+                          className={`px-3 py-1.5 rounded-full border text-[11px] font-bold transition-all ${active ? 'bg-teal-600 border-teal-600 text-white' : 'bg-white border-gray-100 text-gray-500 hover:border-gray-300'}`}
                         >
                           {p}
                         </button>
@@ -243,7 +243,7 @@ export const QuestGovernance: React.FC<QuestGovernanceProps> = ({
       </div>
 
       {/* Navigation Footer */}
-      <div className="p-2 border-t border-gray-50 flex items-center justify-between shrink-0">
+      <div className="p-2 border-t border-gray-50 flex items-center justify-between shrink-0 mt-auto">
         <button
           onClick={handlePrev}
           className="flex items-center space-x-2 font-bold px-4 py-2 text-gray-400 hover:text-gray-600 transition-colors"
