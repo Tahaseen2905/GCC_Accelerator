@@ -1,0 +1,7 @@
+{
+  "name": "AI Centram Navigator",
+  "description": "A high-fidelity GCC (Global Capability Center) strategy platform by JoulesToWatts, featuring a 6-Quest interactive roadmap and diagnostic dashboard.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
