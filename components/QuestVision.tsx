@@ -5,6 +5,8 @@ import { Database, Users, Lightbulb, CheckCircle2, AlertCircle } from 'lucide-re
 import { InteractiveFloat } from './InteractiveFloat';
 import { OperatingModel } from '../types';
 
+import Float1 from "@/src/assets/pages/solutions/ai-solutions/Hero Section/float2.png"
+
 interface QuestVisionProps {
   model: OperatingModel;
   objective: string;
@@ -95,7 +97,7 @@ export const QuestVision: React.FC<QuestVisionProps> = ({
                   <p className="text-teal-700 text-xs mt-0.5 leading-relaxed">Define the core structure of your center.</p>
                 </div>
                 <div className="ml-auto w-16 h-16 hidden md:block">
-                  <InteractiveFloat src="../src/assets/pages/solutions/ai-solutions/Hero Section/float2.png" alt="Vision Float" />
+                  <InteractiveFloat src={Float1} alt="Vision Float" />
                 </div>
               </motion.div>
               <div className="grid grid-cols-1 gap-2">

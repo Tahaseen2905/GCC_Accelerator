@@ -4,6 +4,9 @@ import { Users, Clock, Zap, Handshake, BarChart3, PieChart } from 'lucide-react'
 import { InteractiveFloat } from './InteractiveFloat';
 import { InvolvementLevel } from '../types';
 
+import Float1 from '@/src/assets/pages/solutions/ai-solutions/Hero Section/Hero.png';
+
+
 interface QuestPartnerProps {
   involvement: InvolvementLevel;
   duration: string;
@@ -86,7 +89,7 @@ export const QuestPartner: React.FC<QuestPartnerProps> = ({
                   <p className="text-teal-700 text-xs mt-0.5 leading-relaxed">How deep is the partnership?</p>
                 </div>
                 <div className="ml-auto w-16 h-16 hidden md:block">
-                  <InteractiveFloat src="../src/assets/pages/solutions/ai-solutions/Hero Section/Hero.png" alt="Partner Float" />
+                  <InteractiveFloat src={Float1} alt="Partner Float" />
                 </div>
               </motion.div>
 

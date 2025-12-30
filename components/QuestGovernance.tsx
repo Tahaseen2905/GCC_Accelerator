@@ -4,6 +4,9 @@ import { Building2, Scale, Globe, FileCheck, Shield, Users, Briefcase, Check } f
 import { InteractiveFloat } from './InteractiveFloat';
 import { EntityType } from '../types';
 
+import Float1 from "@/src/assets/pages/solutions/analytics/Hero Section/Hero.png"
+
+
 interface QuestGovernanceProps {
   entityType: EntityType;
   parentIntegration: string;
@@ -79,7 +82,7 @@ export const QuestGovernance: React.FC<QuestGovernanceProps> = ({
                   <p className="text-teal-700 text-xs mt-0.5 leading-relaxed">Define entity type and IP ownership.</p>
                 </div>
                 <div className="ml-auto w-16 h-16 hidden md:block">
-                  <InteractiveFloat src="../src/assets/pages/solutions/ai-solutions/Hero Section/Hero.png" alt="Governance Float" />
+                  <InteractiveFloat src={Float1} alt="Governance Float" />
                 </div>
               </motion.div>
 

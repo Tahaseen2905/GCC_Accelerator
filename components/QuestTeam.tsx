@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Users, DollarSign, Check, Layout, Briefcase, GraduationCap, Repeat } from 'lucide-react';
 import { InteractiveFloat } from './InteractiveFloat';
 
+import Float1 from "@/src/assets/pages/solutions/ai-solutions/Hero Section/float4.png";
+
+
 interface QuestTeamProps {
   headcount: number;
   budget: string;
@@ -103,7 +106,7 @@ export const QuestTeam: React.FC<QuestTeamProps> = ({
                   <p className="text-teal-700 text-xs mt-0.5 leading-relaxed">Define the size and investment for Year 1.</p>
                 </div>
                 <div className="ml-auto w-16 h-16 hidden md:block">
-                  <InteractiveFloat src="../src/assets/pages/solutions/ai-solutions/Hero Section/float4.png" alt="Team Float" />
+                  <InteractiveFloat src={Float1} alt="Team Float" />
                 </div>
               </motion.div>
 

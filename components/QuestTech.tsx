@@ -4,6 +4,8 @@ import { Server, X, Plus } from 'lucide-react';
 import { InteractiveFloat } from './InteractiveFloat';
 import { TechState } from '../types';
 
+import Float1 from "@/src/assets/pages/solutions/ai-solutions/Hero Section/float3.png"
+
 interface QuestTechProps {
     platforms: string[];
     stacks: string[];
@@ -81,7 +83,7 @@ export const QuestTech: React.FC<QuestTechProps> = ({
                                     <p className="text-teal-700 text-xs mt-0.5 leading-relaxed">What are the foundational systems for your center?</p>
                                 </div>
                                 <div className="ml-auto w-16 h-16 hidden md:block">
-                                    <InteractiveFloat src="../src/assets/pages/solutions/ai-solutions/Hero Section/float3.png" alt="Tech Float" />
+                                    <InteractiveFloat src={Float1} alt="Tech Float" />
                                 </div>
                             </motion.div>
 
